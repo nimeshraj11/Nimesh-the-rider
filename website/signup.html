@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SignUp</title>
+	<style>
+		.form{
+
+			
+			padding:10px;
+			float:left;
+
+			background: transparent;
+			background-size: cover;
+			background-position: center;
+			  background-origin: content-box;
+			position: center;
+			margin-left: 2%;
+			margin-top: 5%;
+			right:60px;
+			top:150px;
+			padding-right: 70px;
+			padding-left: 70px;
+
+
+		}
+		h1{
+			color:blue;
+		}
+		.names{
+			
+			color :black;
+		}
+
+	</style>
+</head>
+<body style="background-image: url(p1.jpg);">
+	<div class="form">
+<form name="rr" onsubmit="return javaScript()">
+<h1>Welcome To Bike Store </h1><br>
+
+<input type="text" placeholder="First Name" name="fname" class="names">
+<input type="text" placeholder="Last Name" name="lname"> <br>
+<h3>Looking for</h3>
+<input type="checkbox" >Duke<br>
+<input type="checkbox" >Indian Scout<br>
+<input type="checkbox" >Royal Enfield<br>
+<input type="checkbox" >Yahama R15<br>
+<input type="checkbox" >TVS Apache<br><br>
+
+
+<input type="text" placeholder="Phone Number" name="phone"><br>
+
+<input type="text" placeholder="Email Address" name="email"><br>
+
+<input type="password" placeholder="Password" name="passwords"><br>
+
+<input type="password" placeholder="Confirm Password " name="confpassword"><br>
+
+<input type="checkbox"> remember me<br>
+
+<input type="submit"value="Sign Up"><br>
+<a href="login.html">Already have a account</a>
+
+
+
+</form>
+</div>
+</body>
+<script>
+function javaScript()
+{
+	var FName=document.forms["rr"]["fname"];
+	var LName=document.forms["rr"]["lname"];
+	var Phone=document.forms["rr"]["phone"];
+	var Email=document.forms["rr"]["email"];
+	var Password=document.forms["rr"]["passwords"];
+	var Confirmpass=document.forms["rr"]["confpassword"];
+
+	if(FName.value=="")
+	{
+		window.alert("Please enter your First Name.");
+		return false;
+	}
+
+	if(LName.value=="")
+	{
+		window.alert("Please enter your Last Name.");
+		return false;
+	}
+
+	if(isNaN(Phone.value))
+	{
+		window.alert("Please enter only Numbers.");
+		return false;
+	}
+	 if(Phone.value.toString().length!=10)
+	{
+		window.alert("Please enter 10 Numbers.");
+		return false;
+	}	
+
+
+    var passlength=Password.value.length;
+   
+if(passlength<6)
+  {
+  	window.alert("Password must be at least 6 character.");
+  		return false;
+  }
+
+if(Password.value==Confirmpass.value)
+  {
+  	return true;
+  }
+  else
+  {
+  	window.alert("Password must be same.");
+		return false;
+  }
+
+   var atkiposition=Email.value.indexOf("@");
+   var dotkiposition=Email.value.lastIndexOf(".");
+
+   	if(atkiposition<1 || dotkiposition<atkiposition+2 || dotposition+2>=Email.value)
+   	{
+   		window.alert("Please enter valid Email address.");
+		return false;
+   	}
+
+
+
+   
+
+
+
+}
+</script>
+</html>
